@@ -15,6 +15,24 @@ Este microserviço é responsável por gerenciar as mensagens de contato recebid
     * Implementação de filtros de spam.
     * Análise das mensagens de contato.
 
+## 🚀 Endpoints
+
+### Mensagens de Contato
+
+| Método   | Endpoint             | Descrição                                                                 |
+|----------|----------------------|---------------------------------------------------------------------------|
+| `POST`   | `/api/contact`       | Enviar uma nova mensagem de contato                                      |
+| `GET`    | `/api/contact`       | Listar todas as mensagens de contato (com paginação e filtros opcionais) |
+| `GET`    | `/api/contact/:id`   | Obter os detalhes de uma mensagem específica                             |
+| `DELETE` | `/api/contact/:id`   | Deletar uma mensagem de contato específica                               |
+
+### Origem das Mensagens
+
+| Método   | Endpoint                 | Descrição                                                                |
+|----------|--------------------------|---------------------------------------------------------------------------|
+| `GET`    | `/api/contact/origins`   | Listar todas as origens registradas (sites que enviaram mensagens)       |
+
+
 ## Tecnologias Utilizadas
 
 * NodeJs
@@ -95,3 +113,18 @@ Siga as instruções abaixo para configurar e executar o microserviço em seu am
         ```bash
         docker-compose up -d
         ```
+
+
+## 🗂️ Estrutura do Projeto
+```Bash
+/
+├── pages/
+│   └── api/
+│       └── contact.ts     # Endpoint da API
+├── prisma/
+│   └── schema.prisma
+├── lib/                   # Lógica de validação e utilitários
+├── .env
+├── Dockerfile
+└── README.md
+```
